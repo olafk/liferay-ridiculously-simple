@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="org.xmlportletfactory.olafk.customer.service.CustomerLocalService" class="org.xmlportletfactory.olafk.customer.service.impl.CustomerLocalServiceImpl" />
+	<bean id="org.xmlportletfactory.olafk.customer.service.persistence.CustomerPersistence" class="org.xmlportletfactory.olafk.customer.service.persistence.CustomerPersistenceImpl" parent="basePersistence" />
+	<bean id="org.xmlportletfactory.olafk.customer.service.InvoicesLocalService" class="org.xmlportletfactory.olafk.customer.service.impl.InvoicesLocalServiceImpl" />
+	<bean id="org.xmlportletfactory.olafk.customer.service.persistence.InvoicesPersistence" class="org.xmlportletfactory.olafk.customer.service.persistence.InvoicesPersistenceImpl" parent="basePersistence" />
+</beans>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="org.xmlportletfactory.olafk.customer">
+	<author>Jack A. Rider</author>
+	<namespace>customer</namespace>
+	<entity name="Customer" local-service="true" remote-service="false" uuid="false" trash-enabled="false">
+		<!-- Primary key column -->
+		<column name="customerId" type="long" primary="true" />
+
+		<!-- Foreign key columns -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other columns -->
+		<column name="name" type="String" />
+		<column name="street" type="String" />
+		<column name="city" type="String" />
+		<column name="zip" type="String" />
+
+
+
+
+		<!-- Finder Methods Standard -->		
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>		
+		<finder name="UserIdGroupId" return-type="Collection">
+			<finder-column name="userId" />
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<!-- References -->	
+	</entity>
+	<entity name="Invoices" local-service="true" remote-service="false" uuid="false" trash-enabled="false">
+		<!-- Primary key column -->
+		<column name="invoiceId" type="long" primary="true" />
+
+		<!-- Foreign key columns -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other columns -->
+		<column name="customerId" type="long" />
+		<column name="date" type="Date" />
+		<column name="amount" type="long" />
+		<column name="paid" type="boolean" />
+
+
+
+
+		<!-- Finder Methods Standard -->		
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>		
+		<finder name="UserIdGroupId" return-type="Collection">
+			<finder-column name="userId" />
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+
+		<!-- Finder Methods when Detail Files -->
+		<finder name="CustomerId" return-type="Collection">
+			<finder-column name="customerId" />
+		</finder>
+		<finder name="CustomerIdGroupId" return-type="Collection">
+			<finder-column name="customerId" />
+			<finder-column name="groupId" />
+		</finder>
+		<!-- References -->	
+	</entity>
+	<exceptions>
+		<exception>NoSuchCustomer</exception>
+		<exception>NoSuchInvoices</exception>
+	</exceptions>
+
+</service-builder>

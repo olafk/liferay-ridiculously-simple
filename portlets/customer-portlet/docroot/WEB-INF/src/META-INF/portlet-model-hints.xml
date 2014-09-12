@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="org.xmlportletfactory.olafk.customer.model.Customer">
+		<field name="customerId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String">
+			<hint name="display-width">180</hint>
+			<hint name="max-length">30</hint>
+		</field>
+		<field name="street" type="String">
+			<hint name="display-width">180</hint>
+			<hint name="max-length">30</hint>
+		</field>
+		<field name="city" type="String">
+			<hint name="display-width">180</hint>
+			<hint name="max-length">30</hint>
+		</field>
+		<field name="zip" type="String">
+			<hint name="display-width">180</hint>
+			<hint name="max-length">30</hint>
+		</field>
+	</model>
+	<model name="org.xmlportletfactory.olafk.customer.model.Invoices">
+		<field name="invoiceId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="customerId" type="long">
+			<hint name="display-width">60</hint>
+		</field>
+		<field name="date" type="Date">
+			<hint name="show-time">false</hint>
+			<hint name="year-range-delta">80</hint>
+		</field>
+		<field name="amount" type="long" />
+		<field name="paid" type="boolean" />
+	</model>
+</model-hints>

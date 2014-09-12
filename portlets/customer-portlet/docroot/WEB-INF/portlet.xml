@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+
+<portlet-app
+	version="2.0"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+>
+	<portlet>
+		<portlet-name>Customer</portlet-name>
+		<display-name>Customer</display-name>
+		<portlet-class>org.xmlportletfactory.olafk.customer.CustomerPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/JSPs/customers/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-jsp</name>
+			<value>/JSPs/customers/edit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-customers-jsp</name>
+			<value>/JSPs/customers/editcustomers.jsp</value>
+		</init-param>
+		<init-param>
+			<name>view-customers-jsp</name>
+			<value>/JSPs/customers/viewcustomers.jsp</value>
+		</init-param>
+		<init-param>
+			<name>help-jsp</name>
+			<value>/JSPs/customers/help.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>HELP</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Customer</title>
+			<short-title>Customer</short-title>
+			<keywords>Customer</keywords>
+		</portlet-info>
+		<!-- Portlet preferences (configurable by user in portlet EDIT mode) -->
+		<portlet-preferences>
+			<preference>
+				<name>rows-per-page</name>
+				<value>20</value>
+			</preference>
+			<preference>
+				<name>date-format</name>
+				<value>yyyy/MM/dd</value>
+			</preference>
+			<preference>
+				<name>datetime-format</name>
+				<value>yyyy/MM/dd hh:mm</value>
+			</preference>
+		</portlet-preferences>		
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+        <supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:Customer.customerId</qname>
+        </supported-processing-event>
+		<supported-publishing-event>
+                    <qname xmlns:x="http://liferay.com/events">x:Customer.customerId</qname>
+		</supported-publishing-event>
+
+	</portlet>
+	<portlet>
+		<portlet-name>Invoices</portlet-name>
+		<display-name>Invoices</display-name>
+		<portlet-class>org.xmlportletfactory.olafk.customer.InvoicesPortlet</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/JSPs/invoices/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-jsp</name>
+			<value>/JSPs/invoices/edit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-invoices-jsp</name>
+			<value>/JSPs/invoices/editinvoices.jsp</value>
+		</init-param>
+		<init-param>
+			<name>view-invoices-jsp</name>
+			<value>/JSPs/invoices/viewinvoices.jsp</value>
+		</init-param>
+		<init-param>
+			<name>help-jsp</name>
+			<value>/JSPs/invoices/help.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>HELP</portlet-mode>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Invoices</title>
+			<short-title>Invoices</short-title>
+			<keywords>Invoices</keywords>
+		</portlet-info>
+		<!-- Portlet preferences (configurable by user in portlet EDIT mode) -->
+		<portlet-preferences>
+			<preference>
+				<name>rows-per-page</name>
+				<value>20</value>
+			</preference>
+			<preference>
+				<name>date-format</name>
+				<value>yyyy/MM/dd</value>
+			</preference>
+			<preference>
+				<name>datetime-format</name>
+				<value>yyyy/MM/dd hh:mm</value>
+			</preference>
+		</portlet-preferences>		
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+                    <qname xmlns:x="http://liferay.com/events">x:Customer.customerId</qname>
+		</supported-processing-event>
+
+	</portlet>
+	<portlet>
+		<portlet-name>create-customers</portlet-name>
+		<display-name>Create Customers</display-name>
+		<portlet-class>
+			org.olafk.liferay.rsp.CreateCustomersPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/createcustomers/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Create Customers</title>
+			<short-title>Create Customers</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>customer-detail</portlet-name>
+		<display-name>Customer Detail</display-name>
+		<portlet-class>
+			org.olafk.liferay.portlet.CustomerDetailPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/customerdetail/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Customer Detail</title>
+			<short-title>Customer Detail</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+        <supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:Customer.customerId</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>mru-customer</portlet-name>
+		<display-name>MRU Customer</display-name>
+		<portlet-class>
+			org.olafk.liferay.portlet.MRUCustomer
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/mrucustomer/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>MRUCustomer</title>
+			<short-title>Mru Customer</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+        <supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:Customer.customerId</qname>
+        </supported-processing-event>
+        <supported-publishing-event>
+            <qname xmlns:x="http://liferay.com/events">x:Customer.customerId</qname>
+        </supported-publishing-event>
+	</portlet>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:Customer.customerId</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+
+
+
+
+</portlet-app>
