@@ -46,6 +46,7 @@ String customerIdStr = customer.getCustomerId() + "";
     </portlet:actionURL>
 <%
 	if (primKey.equalsIgnoreCase((String)request.getAttribute("highlightRowWithKey"))) {
+		PortalUtil.addPortletBreadcrumbEntry(request, customer.getName(), request.getRequestURI());
 %>
     <liferay-ui:icon image="forward" url="<%=eventCustomerURL.toString() %>" />
 <%
