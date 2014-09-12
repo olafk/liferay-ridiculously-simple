@@ -18,6 +18,7 @@
 <%@ page import="org.xmlportletfactory.olafk.customer.model.Customer"%>
 <%@ page import="org.xmlportletfactory.olafk.customer.service.CustomerLocalServiceUtil"%>
 <%@ page import="org.xmlportletfactory.olafk.customer.service.permission.CustomerEntryPermission"%>
+<%@ page import="com.liferay.portal.util.PortalUtil"%>
 
 <%
 String containerStart = (String) request.getAttribute("containerStart");
